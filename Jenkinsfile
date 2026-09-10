@@ -13,7 +13,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''
+        powershell '''
           set -eu 
           npm ci
           npx playwright install
@@ -22,9 +22,9 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sh '''
-          export TEST_USER_NAME="$TEST_CREDS_USR"
-          export TEST_PASSWORD="$TEST_CREDS_PSW"
+        powershell '''
+          $env:TEST_USER_NAME="$env:TEST_CREDS_USR"
+          $env:TEST_PASSWORD="$env:TEST_CREDS_PSW"
           npm run test:make-apt
         '''
       }
