@@ -14,9 +14,8 @@ pipeline {
     stage('Build') {
       steps {
         bat '''
-          set -eu 
-          npm ci
-          npx playwright install
+          call npm ci
+          call npx playwright install chromium
         '''
       }
     }
@@ -25,7 +24,7 @@ pipeline {
         bat '''
           set TEST_USER_NAME=%TEST_CREDS_USR%
           set TEST_PASSWORD=%TEST_CREDS_PSW%
-          npm run test:make-apt
+          call npm run test:make-apt
         '''
       }
       post {
