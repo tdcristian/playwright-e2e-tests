@@ -12,11 +12,32 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
+    "demo:param": "npx playwright test tests/demo/params.make.aptmnt.spec.ts --headed",
     "demo": "npx playwright test tests/demo/mytest.spec.ts --headed",
-    "test:login": "npx playwright test tests/functional/login.spec.ts --headed"
+    "demo:parallel": "npx playwright test --grep @demo",
+    "test:e2e": "npx playwright test --config=config/test.playwright.config.ts tests/e2e/nopcommerce.e2e.spec.ts --headed",
+    "test:api": "npx playwright test --config=config/test.playwright.config.ts tests/api/users.fw.api.spec.ts",
+    "login": "npx playwright test tests/functional/login.spec.ts --headed",
+    "make-apt": "npx playwright test tests/functional/make.aptmnt.spec.ts --headed",
+    "test:make-apt": "npx playwright test --config=config/test.playwright.config.ts tests/functional/make.aptmnt.spec.ts --headed",
+    "dev:make-apt": "npx playwright test --config=config/dev.playwright.config.ts tests/functional/make.aptmnt.spec.ts --headed",
+    "pw-basic-cap": "npx playwright test tests/functional/pw.basic.cap.make.aptmnt.spec.ts --headed",
+    "pw-adv-cap": "npx playwright test tests/functional/pw.adv.cap.make.aptmnt.spec.ts --headed",
+    "demo:tag": "npx playwright test --headed --grep @smoke",
+    "elem-init": "npx playwright test tests/demo/elem.handling.make.aptmnt.spec.ts --headed",
+    "inventory": "npx playwright test tests/functional/inventory.spec.ts --headed",
+    "inventory:ui": "npx playwright test tests/functional/inventory.spec.ts --ui",
+    "inventory:cli": "set PWDEBUG=1 && npx playwright test tests/functional/inventory.spec.ts",
+    "allure:serve": "allure serve"
   },
   "devDependencies": {
-    "@playwright/test": "^1.62.1",
-    "@types/node": "^26.4.1"
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.4.1",
+    "allure-playwright": "^3.12.0",
+    "chalk": "^6.0.0",
+    "tsx": "^4.23.13"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
   }
 }
