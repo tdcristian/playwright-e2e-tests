@@ -19,7 +19,7 @@
     "test:api": "npx playwright test --config=config/test.playwright.config.ts tests/api/users.fw.api.spec.ts",
     "login": "npx playwright test tests/functional/login.spec.ts --headed",
     "make-apt": "npx playwright test tests/functional/make.aptmnt.spec.ts --headed",
-    "test:make-apt": "npx playwright test --config=config/test.playwright.config.ts tests/functional/make.aptmnt.spec.ts --headed",
+    "test:make-apt": "npx playwright test --config=config/test.playwright.config.ts tests/functional/make.aptmnt.spec.ts",
     "dev:make-apt": "npx playwright test --config=config/dev.playwright.config.ts tests/functional/make.aptmnt.spec.ts --headed",
     "pw-basic-cap": "npx playwright test tests/functional/pw.basic.cap.make.aptmnt.spec.ts --headed",
     "pw-adv-cap": "npx playwright test tests/functional/pw.adv.cap.make.aptmnt.spec.ts --headed",

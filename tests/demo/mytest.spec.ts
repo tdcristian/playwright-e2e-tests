@@ -73,7 +73,7 @@ test("Should demo constant data", async ({ page }, testInfo) => {
   );
 });
 
-test.only("Should demo click action", async ({ page }, testInfo) => {
+test("Should demo click action", async ({ page }, testInfo) => {
   /*
   await page.goto("https://katalon-demo-cura.herokuapp.com/");
   await page.getByRole("link", { name: "Make Appointment" }).click();
